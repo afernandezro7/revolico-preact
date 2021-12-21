@@ -63,7 +63,7 @@ const ProductDetails = ({ id }) => {
 						product={product} 
 						items={items} 
 					/>
-					<DetailsActions product={product} />		
+					<DetailsActions options={product.options} />		
 					
 				</div>
 

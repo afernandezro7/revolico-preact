@@ -4,11 +4,11 @@ import { useForm } from '../../hooks/useForm/useForm';
 import style from './style.css';
 
 
-const DetailsActions = ({ product }) => {
+const DetailsActions = ({ options }) => {
 
     const [ state, handleInputChange] = useForm({
-        color: product.colors[0],
-        storage:product.internalMemory[0]
+        color: options.colors[0].code,
+        storage:options.storages[0].code
     })
     const {color, storage} = state
 
@@ -26,8 +26,8 @@ const DetailsActions = ({ product }) => {
                     <div class={style.formGroup}>
                         <select class={style.formSelect} name='color' value={color} onChange={handleInputChange} >
                             {
-                                product.colors.map(color => (
-                                    <option key={color} value={color}>{color}</option>
+                                options.colors.map(color => (
+                                    <option key={color.code} value={color.code}>{color.name}</option>
                                 ))
                             }
                         </select>
@@ -36,8 +36,8 @@ const DetailsActions = ({ product }) => {
                     <div class={style.formGroup}>
                         <select class={style.formSelect} name='storage' value={storage} onChange={handleInputChange}>
                             {
-                                product.internalMemory.map(mem => (
-                                    <option key={mem} value={mem}>{mem}</option>
+                                options.storages.map(mem => (
+                                    <option key={mem.code} value={mem.code}>{mem.name}</option>
                                 ))
                             }
                         </select>
