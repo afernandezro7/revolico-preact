@@ -15,11 +15,12 @@ export const getProducts = async()=> {
 export const getProductDetail= async(id)=> {
     try {
         const url = `${urlBase}api/product/${id}`
-        const data = await fetch(url)
-        console.log(data)
+        const response = await fetch(url)
+        const data = await response.json()
+        return data
     } catch (error) {
         console.log(error)
-        return []
+        return null
     }
 }
 

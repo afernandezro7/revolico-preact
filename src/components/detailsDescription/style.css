@@ -1,0 +1,29 @@
+.listGroup {
+	display: flex;
+	flex-direction: column;
+	padding-left: 0;
+	margin-bottom: 0;
+	border-radius: .25rem;
+}
+
+.listGroupItem{
+    position: relative;
+	display: flex;
+    justify-content: space-between;
+	padding: .5rem 1rem;
+	color: #212529;
+	text-decoration: none;
+	background-color: #fff;
+	border: 1px solid rgba(0,0,0,.125);
+}
+
+.listGroupItem:first-child {
+    border-top-left-radius: inherit;
+    border-top-right-radius: inherit;
+}
+
+.itemInfo {
+  
+   
+    
+}

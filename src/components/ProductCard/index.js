@@ -5,11 +5,11 @@ import { createContext } from 'react';
 export const ProductContext = createContext({});
 const { Provider } = ProductContext;
 
-export const ProductCard = ({ children, product } ) => {
+export const ProductCard = ({ children, product, styles={} } ) => {
 
     return (
         <Provider value={{product}}>
-            <div className={ style.productCard }>
+            <div className={ style.productCard } style={styles}>
                 { children }
             </div>
         </Provider>
