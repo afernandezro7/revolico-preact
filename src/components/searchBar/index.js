@@ -1,22 +1,30 @@
 import { h } from 'preact';
+import { useEffect, useState } from 'preact/hooks';
 import { BsSearch } from "react-icons/bs";
-import { fetApiSrv, storageSrv } from '../../services';
 import style from './style.css';
 
-export const SearchBar = () => {
+export const SearchBar = ({onSearch}) => {
+
+    const [criteria, setcriteria] = useState('')
+
+    const handleInputChange = (e) => {
+        setcriteria(e.target.value)
+    }
 
     const handleSearch = async(e) => {
         e.preventDefault();
-
-        const products = await fetApiSrv.getProducts()
-        storageSrv.setProducts(products)
-        console.log(storageSrv.getProducts())
+        onSearch(criteria)
+        
     }
+
+    useEffect(() => {
+        onSearch(criteria)
+    }, [criteria, onSearch])
 
     return (
         <div class={style.search}>
             <form onSubmit={handleSearch}>
-                <input class={style.formControl} type="text" />
+                <input class={style.formControl} type="text" name='criteria' value={criteria} onInput={ handleInputChange } />
                 <BsSearch 
                     style={{
                         height: 15,
