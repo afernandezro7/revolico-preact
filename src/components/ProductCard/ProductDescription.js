@@ -14,9 +14,12 @@ export const ProductDescription = () => {
             <span class={ style.productBrand}>
                 { product.brand }
             </span>
-            <span class={ style.productPrice }>
-                $ { product.price }
-            </span>
+            {
+                product.price 
+                && <span class={ style.productPrice }>
+                    $ { product.price }
+                </span>
+            }
         </div>
     );
 }

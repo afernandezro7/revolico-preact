@@ -11,14 +11,14 @@ const ProductList = () => {
 	const {products, setcriteria} = useProduct()
 
 	return (
-		<div class={style.home}>
-			<h1>Nuestros Productos </h1>
+		<div class={style.home}>		
 			<ProductGroup>
+				<h1>Nuestros Productos </h1>
 				<div class={style.searchWrapper}>
 					<SearchBar onSearch={setcriteria} />
 				</div>
 				<ProductsGrid products={products} />
-			</ProductGroup>
+			</ProductGroup>			
 		</div>
 	)
 };

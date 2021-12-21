@@ -6,5 +6,13 @@
 
 .searchWrapper{
 	display: flex;
-	justify-content: flex-end;
+	justify-content: center;
+}
+
+@media (min-width: 800px) {
+    
+    .searchWrapper{
+		display: flex;
+		justify-content: flex-end;
+	}
 }
