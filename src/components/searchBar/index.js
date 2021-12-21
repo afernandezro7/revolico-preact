@@ -1,12 +1,15 @@
 import { h } from 'preact';
 import { BsSearch } from "react-icons/bs";
+import { getProducts } from '../../services/fetApi';
 import style from './style.css';
 
 export const SearchBar = () => {
 
-    const handleSearch = (e) => {
+    const handleSearch = async(e) => {
         e.preventDefault();
         console.log('search')
+        const products = await getProducts()
+        console.log(products)
     }
 
     return (
