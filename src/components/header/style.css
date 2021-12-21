@@ -1,3 +1,4 @@
+
 .header {
 	position: fixed;
 	left: 0;
@@ -25,7 +26,7 @@
 	font-size: 100%;
 }
 
-.header nav a {
+.header nav a, .header nav button {
 	display: inline-block;
 	height: 56px;
 	line-height: 56px;
@@ -45,4 +46,50 @@
 
 .header nav a.active {
 	background: rgba(0,0,0,0.4);
+}
+
+.logoWraper{
+	margin-left: 1rem;
+	margin-top: 1rem;
+}
+
+
+.btn {
+	display: inline-block;
+	font-weight: 400;
+	line-height: 1.5;
+	color: #212529;
+	text-align: center;
+	text-decoration: none;
+	vertical-align: middle;
+	cursor: pointer;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	user-select: none;
+	background-color: transparent;
+	border: 1px solid transparent;
+	padding: .375rem .75rem;
+	font-size: 1rem;
+	border-radius: .25rem;
+	transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+
+.badge {
+	display: inline-block;
+	padding: .35em .65em;
+	font-size: .75em;
+	font-weight: 700;
+	line-height: 1;
+	color: #fff;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: baseline;
+	border-radius: .25rem;
+}
+
+.btn .badge {
+	position: relative;
+	top: 0px;
+	font-size: 12px;
 }

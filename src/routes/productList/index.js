@@ -3,7 +3,7 @@ import style from './style.css';
 
 const ProductList = () => (
 	<div class={style.home}>
-		<h1>ProductList</h1>
+		<h1>Nuestros Productos </h1>
 		<p>This is the ProductList component.</p>
 	</div>
 );
