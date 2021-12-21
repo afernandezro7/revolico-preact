@@ -1,0 +1,14 @@
+.gridWrapper{
+    margin-top: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+@media (min-width: 800px) {
+    
+    .gridWrapper{
+        display: grid;
+        grid-template-columns: repeat(4, 1fr); 
+    }
+}
+  
