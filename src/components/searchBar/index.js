@@ -1,15 +1,16 @@
 import { h } from 'preact';
 import { BsSearch } from "react-icons/bs";
-import { getProducts } from '../../services/fetApi';
+import { fetApiSrv, storageSrv } from '../../services';
 import style from './style.css';
 
 export const SearchBar = () => {
 
     const handleSearch = async(e) => {
         e.preventDefault();
-        console.log('search')
-        const products = await getProducts()
-        console.log(products)
+
+        const products = await fetApiSrv.getProducts()
+        storageSrv.setProducts(products)
+        console.log(storageSrv.getProducts())
     }
 
     return (
