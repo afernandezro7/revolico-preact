@@ -7,16 +7,19 @@ import Header from './header';
 // Code-splitting is automated for `routes` directory
 import ProductList from '../routes/productList';
 import ProductDetails from '../routes/productDetails';
+import { CarProvider } from '../hooks/carContext';
 
 const App = () => (
-	<div id="app">
-		<Header />
-		<Router>
-			<ProductList path="/" />
-			<ProductDetails path="/products/:id" />
-	
-		</Router>
-	</div>
+	<CarProvider>
+		<div id="app">
+			<Header />
+			<Router>
+				<ProductList path="/" />
+				<ProductDetails path="/products/:id" />
+		
+			</Router>
+		</div>
+	</CarProvider>
 )
 
 export default App;
