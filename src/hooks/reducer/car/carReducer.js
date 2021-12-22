@@ -11,7 +11,7 @@ export const carReducer = (state, action) => {
         case types.addItemCar: 
             return {
                 ...state,
-                count: state.count + action.payload.count
+                count: state.count + action.payload.count //HOT FIX ONCE CORS IS ROESOLVE CHANGE TO - action.payload.count
             };
         default: return state;
     }

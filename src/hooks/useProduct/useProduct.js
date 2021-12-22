@@ -18,14 +18,6 @@ export const useProduct = (initialValue=[]) => {
         [],
     )
 
-    // const searchProduct = (criteria) => {   
-    //     const storageProductList = storageSrv.getProducts()
-    //     return criteria 
-    //         ? storageProductList.filter(
-    //             (product)=>product.brand.toLowerCase().includes(criteria.toLowerCase()) || product.model.toLowerCase().includes(criteria.toLowerCase())
-    //         ) 
-    //         : storageProductList
-    // }
 
     const assignProducts = () =>{
         const filterProducts = searchProduct(criteria)

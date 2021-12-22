@@ -22,7 +22,6 @@ export const CarProvider = ({ children }) => {
     const startaddItemCar = async ( { id, colorCode, storageCode } )=>{
         try {   
             const {count} = await fetApiSrv.addProduct( {id, colorCode,storageCode})    
-            console.log(count)
             dispatch(addItemCar(count))
         } catch (error) {
             console.log(error)
