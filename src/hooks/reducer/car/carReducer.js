@@ -11,7 +11,7 @@ export const carReducer = (state, action) => {
         case types.addItemCar: 
             return {
                 ...state,
-                count: action.payload.count
+                count: state.count + action.payload.count
             };
         default: return state;
     }
