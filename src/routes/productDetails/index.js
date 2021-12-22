@@ -32,7 +32,6 @@ const ProductDetails = ({ id }) => {
 		fetApiSrv.getProductDetail(id)
 			.then(res => {
 				if (!res.id) route('/', true);
-				console.log(res)
 				setproduct(res)
 			})
 			.catch(error => {

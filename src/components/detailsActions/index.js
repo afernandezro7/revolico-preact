@@ -1,7 +1,8 @@
 import { h } from 'preact';
+import { useContext } from 'preact/hooks';
 import { BsCart3 } from "react-icons/bs";
+import { CarContext } from '../../hooks/carContext';
 import { useForm } from '../../hooks/useForm/useForm';
-import { fetApiSrv } from '../../services';
 import style from './style.css';
 
 
@@ -14,18 +15,18 @@ const DetailsActions = ({ product }) => {
     })
     const {color, storage} = state
 
+    const { startaddItemCar } = useContext(CarContext)
+
     const handleSubmit = async (e)=>{
         e.preventDefault()
 
-        console.log(id)
-        console.log(color)
-        console.log(storage)
-
-        fetApiSrv.addProduct({
+        startaddItemCar({
             id,
             colorCode: color,
             storageCode: storage
         })
+        
+
     }
 
     return (

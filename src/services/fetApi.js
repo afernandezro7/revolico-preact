@@ -29,14 +29,14 @@ export const addProduct= async(product)=> {
         const url = `${urlBase}api/cart`
         const response = await fetch(url,{
             method:'POST',
-            credentials: "same-origin",
+            // credentials: "include",
             headers: {
                 'Content-type': 'application/json'
             },
             body: JSON.stringify(product)
         })
         const data = await response.json()
-        console.log(data)
+        return data
     } catch (error) {
         console.log(error)
         return []
