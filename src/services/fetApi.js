@@ -26,11 +26,16 @@ export const getProductDetail= async(id)=> {
 
 export const addProduct= async(product)=> {
     try {
-        const url = `${urlBase}api/car`
-        const data = await fetch(url,{
+        const url = `${urlBase}api/cart`
+        const response = await fetch(url,{
             method:'POST',
-            body: JSON.stringify( product )
+            credentials: "same-origin",
+            headers: {
+                'Content-type': 'application/json'
+            },
+            body: JSON.stringify(product)
         })
+        const data = await response.json()
         console.log(data)
     } catch (error) {
         console.log(error)

@@ -1,21 +1,31 @@
 import { h } from 'preact';
 import { BsCart3 } from "react-icons/bs";
 import { useForm } from '../../hooks/useForm/useForm';
+import { fetApiSrv } from '../../services';
 import style from './style.css';
 
 
-const DetailsActions = ({ options }) => {
+const DetailsActions = ({ product }) => {
 
+    const {options, id } = product
     const [ state, handleInputChange] = useForm({
         color: options.colors[0].code,
         storage:options.storages[0].code
     })
     const {color, storage} = state
 
-    const handleSubmit = (e)=>{
+    const handleSubmit = async (e)=>{
         e.preventDefault()
-        console.log("color", color)
-        console.log("storage", storage)
+
+        console.log(id)
+        console.log(color)
+        console.log(storage)
+
+        fetApiSrv.addProduct({
+            id,
+            colorCode: color,
+            storageCode: storage
+        })
     }
 
     return (
