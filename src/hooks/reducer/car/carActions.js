@@ -9,10 +9,10 @@ export const resetCar = (  )=>{
     }
 }
 
-export const addItemCar = ( item )=>{
+export const addItemCar = ( count )=>{
     return{
-        type: types.resetCar,
-        payload: item
+        type: types.addItemCar,
+        payload: {count}
     }
 }
 

@@ -8,17 +8,21 @@ import Header from './header';
 import ProductList from '../routes/productList';
 import ProductDetails from '../routes/productDetails';
 import { CarProvider } from '../hooks/carContext';
+import { UrlProvider } from '../hooks/urlContext';
 
 const App = () => (
+
 	<CarProvider>
-		<div id="app">
-			<Header />
-			<Router>
-				<ProductList path="/" />
-				<ProductDetails path="/products/:id" />
-		
-			</Router>
-		</div>
+		<UrlProvider>
+			<div id="app">
+				<Header />
+				<Router>
+					<ProductList path="/" />
+					<ProductDetails path="/products/:id" />
+			
+				</Router>
+			</div>
+		</UrlProvider>
 	</CarProvider>
 )
 

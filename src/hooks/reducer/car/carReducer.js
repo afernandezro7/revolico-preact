@@ -1,8 +1,7 @@
 import { types } from "./types";
 
 const initialState = {
-    carItems: 0,
-    itemList: []
+    count: 0
 }
 
 
@@ -12,8 +11,7 @@ export const carReducer = (state, action) => {
         case types.addItemCar: 
             return {
                 ...state,
-                carItems: state+1,
-                itemList: [...state.itemList, action.payload]
+                count: state.count + action.payload.count
             };
         default: return state;
     }

@@ -2,6 +2,7 @@ import { createContext } from 'react';
 import { useReducer } from 'preact/hooks';
 import { carReducer } from './reducer/car/carReducer';
 import { resetCar, addItemCar } from './reducer/car/carActions';
+import { fetApiSrv } from '../services';
 
 export const CarContext = createContext({});
 const { Provider } = CarContext;
@@ -9,8 +10,7 @@ const { Provider } = CarContext;
 export const CarProvider = ({ children }) => {
 
     const initialState = {
-        carItems: 0,
-        itemList: []
+        count: 0
     }
 
     const [state, dispatch] = useReducer(carReducer,initialState)
@@ -18,8 +18,15 @@ export const CarProvider = ({ children }) => {
     const startResetCar = ( )=>{
         dispatch(resetCar)
     }
-    const startaddItemCar = ( item )=>{
-        dispatch(addItemCar(item))
+
+    const startaddItemCar = async ( { id, colorCode, storageCode } )=>{
+        try {   
+            const {count} = await fetApiSrv.addProduct( {id, colorCode,storageCode})    
+            console.log(count)
+            dispatch(addItemCar(count))
+        } catch (error) {
+            console.log(error)
+        }
     }
 
     return (
