@@ -2,6 +2,12 @@
 
 # Getting Started with Revolico Market
 
+## Usage 
+    - git clone https://github.com/afernandezro7/revolico-preact
+    - cd ./revolico-preact
+    - npm install
+    - npm start
+
 ## Features
 - Proyect configurations
     - Eslint configurations
@@ -33,5 +39,7 @@
                 - add product to car           
 
 
-
+## Bugs
+- TODO HOT-FIX - CHANGE SERVICES TO GET SESSION COOKIE [PROBLEM WITH CORS]
+- HOT FIX - ONCE CORS IS ROSESOLVE CHANGE TO - action.payload.count in carReducer
 
