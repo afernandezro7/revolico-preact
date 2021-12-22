@@ -1,6 +1,7 @@
 import { h } from 'preact';
 import { route } from 'preact-router';
 import { useEffect, useState } from 'preact/hooks';
+// import { urlContext } from '../../hooks/urlContext';
 import DetailsActions from '../../components/detailsActions';
 import DetailsDescription from '../../components/detailsDescription';
 import { ProductCard } from '../../components/ProductCard';
@@ -39,6 +40,15 @@ const ProductDetails = ({ id }) => {
 				route('/', true);
 			})
 	}, [id])
+
+	// const {linkToProduct} = useContext(urlContext)
+
+	// useEffect(() => {
+	// 	linkToProduct({
+	// 		model:product?.model || null,
+	// 		path: url
+	// 	})
+	// }, [product])
 
 	if (!product) {
 		return (

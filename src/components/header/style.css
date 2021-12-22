@@ -93,3 +93,37 @@
 	top: 0px;
 	font-size: 12px;
 }
+
+.breadcrumb {
+	margin-top: 0.35em;
+	position: fixed;
+	top: 0;
+	right: 5rem;	
+	padding: 0 0;
+	margin-bottom: 1rem;
+	list-style: none;
+}
+.breadcrumb ol{
+	display: flex;
+	flex-wrap: nowrap;
+	
+}
+.breadcrumb li,.breadcrumb li a {
+	list-style: none;
+	text-decoration: none;
+	color: #fff;
+	margin-right: .1rem;
+	
+}
+.breadcrumb span {
+	margin-right: 0.4rem;	
+}
+.breadcrumb li span:hover {
+	text-decoration: underline;
+}
+
+.breadcrumb li a {	
+	display: inline-block;
+	
+}
+

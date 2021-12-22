@@ -1,4 +1,6 @@
 import { h } from 'preact';
+// import { useContext, useEffect } from 'preact/hooks';
+// import { urlContext } from '../../hooks/urlContext';
 import { ProductsGrid } from '../../components/productsGrid';
 import { ProductGroup } from '../../components/ProductsGroup';
 import { SearchBar } from '../../components/searchBar';
@@ -9,6 +11,12 @@ import style from './style.css';
 const ProductList = () => {
 
 	const {products, setcriteria} = useProduct()
+	// const {reset} = useContext(urlContext)
+
+	// useEffect(() => {
+	// 	reset()
+	// }, [reset])
+
 
 	return (
 		<div class={style.home}>		
