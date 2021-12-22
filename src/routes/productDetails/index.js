@@ -1,7 +1,7 @@
 import { h } from 'preact';
 import { route } from 'preact-router';
-import { useEffect, useState } from 'preact/hooks';
-// import { urlContext } from '../../hooks/urlContext';
+import { useContext, useEffect, useState } from 'preact/hooks';
+import { urlContext } from '../../hooks/urlContext';
 import DetailsActions from '../../components/detailsActions';
 import DetailsDescription from '../../components/detailsDescription';
 import { ProductCard } from '../../components/ProductCard';
@@ -25,9 +25,10 @@ const items = [
 ];
 
 // Note: `id` comes from the URL, courtesy of our router
-const ProductDetails = ({ id }) => {
+const ProductDetails = ({ id, url }) => {
 
 	const [product, setproduct] = useState(null)
+
 
 	useEffect(() => {
 		fetApiSrv.getProductDetail(id)
@@ -41,14 +42,17 @@ const ProductDetails = ({ id }) => {
 			})
 	}, [id])
 
-	// const {linkToProduct} = useContext(urlContext)
+	// Context with current url
+	const {linkToProduct} = useContext(urlContext)
+	useEffect(() => {
 
-	// useEffect(() => {
-	// 	linkToProduct({
-	// 		model:product?.model || null,
-	// 		path: url
-	// 	})
-	// }, [product])
+		linkToProduct({
+			model: product?.model,
+			path: url
+		})
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, [ product ])
+
 
 	if (!product) {
 		return (

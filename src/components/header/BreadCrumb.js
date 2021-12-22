@@ -1,16 +1,24 @@
 import { h } from 'preact';
 import { Link } from 'preact-router/match';
+import { useContext } from 'preact/hooks';
+import { urlContext } from '../../hooks/urlContext';
 import style from './style.css';
 
 export const BreadCrumb = () => {
     
+    const {state} = useContext(urlContext)
 
     return (
-        <div class={style.breadcrumb}>
-			<ol>
-				<li class={style.breadcrumbItem}><Link href="/"><span>Products</span> /</Link></li> 
-				<li class={`${style.breadcrumbItem} ${style.active} `}>Liquid Z6</li>
-			</ol>
-		</div>
+        <>
+            {
+                state.model &&
+                    <div class={style.breadcrumb}>
+                        <ol>
+                            <li class={style.breadcrumbItem}><Link href="/"><span>Products</span> /</Link></li> 
+                            <li class={`${style.breadcrumbItem} ${style.active} `}>{state.model}</li>
+                        </ol>
+                    </div>
+            }
+        </>
     );
 }
