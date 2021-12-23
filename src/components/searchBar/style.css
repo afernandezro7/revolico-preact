@@ -16,7 +16,7 @@ input {
     line-height: 1.5;
     padding: .375rem .75rem;
     transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
-    width: 250px;
+    width: 200px;
 }
 
 @media (min-width: 800px) {
