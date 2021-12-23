@@ -85,5 +85,20 @@
 
     color: #673AB7;
     border-color: #673AB7;
-    
+
+	transition: color 0.5s, transform 0.2s, background-color 0.2s;
+    background-color: transparent
+}
+
+.btn:active {
+	transform: translateY(3px)
+}
+.btn:hover {
+	background-color: #673AB7;
+	color: #fff;
+
+}
+
+.btn::after, .btn::before {
+	border-radius: 3px
 }
