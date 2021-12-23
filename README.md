@@ -40,6 +40,8 @@
 
 
 ## Bugs
+- TODO : CHANGE SERVER POLITICS Access-Control-Allow-Origin to exact match with origin insted wildcard "*"
 - TODO : HOT-FIX - CHANGE SERVICES TO GET SESSION COOKIE [PROBLEM WITH CORS]
 - TODO : HOT FIX - ONCE CORS IS ROSOLVE CHANGE TO - action.payload.count in carReducer
+
 
