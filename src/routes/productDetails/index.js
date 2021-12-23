@@ -67,9 +67,11 @@ const ProductDetails = ({ id, url }) => {
 			<h1>Producto: {product.model}</h1>
 
 			<div class={style.detailsWrapper}>
-				<ProductCard product={product} styles={{ minWidth: 400 }}>
-					<ProductImage />
-				</ProductCard>
+				<div class={style.cardWrapper}>
+					<ProductCard product={product} styles={{ minWidth: 400 }}>
+						<ProductImage />
+					</ProductCard>
+				</div>
 
 				<div class={style.detailsInfo} >				
 					<DetailsDescription 
